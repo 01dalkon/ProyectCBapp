@@ -1,0 +1,38 @@
+<div class="card border-primary mb-3 my-4">
+  <div class="card-header">Registro</div>
+  <div class="card-body">
+    <h5 class="card-title">Listado de registros</h5>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Cons</th>
+        <th>Placa</th>
+        <th>Tipo</th>
+        <th>Tipo Registro</th>
+        <th>Cilindraje</th>
+        <th>Valor</th>
+        <th>Fecha Entrada</th>
+        <th>Fecha Salida</th>
+        <th>Pago</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let registro of registro">
+        <td>{{ registro.id}}</td>
+        <td>{{ registro.placa}}</td>
+        <td>{{ registro.tipo}}</td>
+        <td>{{ registro.tipoRegistro}}</td>
+        <td>{{ registro.cilindraje}}</td>
+        <td>{{ registro.valor}}</td>
+        <td>{{ registro.fechaEntrada | date : 'M/d/yy h:mm a'}}</td>
+        <td>{{ registro.fechaSalida | date : 'M/d/yy h:mm a'}}</td>
+        <td>
+          <button type="button" name="button" [routerLink] = "['/registro/salida', registro.id]" class="btn btn-default">Pagar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+</div>
